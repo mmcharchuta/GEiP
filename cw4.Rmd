@@ -1,0 +1,160 @@
+---
+title: "GEiP"
+author: "Sebastian Chmielewski"
+date: "2025-01-22"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+Na ostatnich zajęciach wprowadzimy *RMarkdown*. Jest to format, który umożliwia szybkie tworzenie raportu i przeplatanie fragmentów kodu z notatkami. 
+
+Fragmenty kodu (chunks) zaczynają się od nagłówka (```{r <nazwa fragmentu}) oraz kończą ```, np.:
+
+```{r setup, include=FALSE}
+# , include=FALSE oznacza, że ten fragment kodu nie zostanie wygenerowany w raporcie
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+```
+
+Żeby wygenerować raport, kliknij przycisk **Knit** na górze ekranu. 
+
+
+```{r wczytaj plik VCF z chCADD scores}
+vcf_1 <- read.table("vcf_C_pyg_26_reverse_indelRm_intersect_annotated_SNP_is_alt.bed")[,c(1,3,6,20)]
+
+colnames(vcf_1) <- c("chr", "pos", "chCADD", "FORMAT")
+
+# policz warianty
+n_variants <- nrow(vcf_1)
+
+# wyciągnij informacje o homozygotach/heterozygotach. Użyj funkcji separate z paczki tidyr. 
+vcf_1 %>%
+  separate(FORMAT, into = "genotype", sep = ":")
+
+# jeśli chcesz pozbyć się ostrzeżenia, dodaj paramter extra:
+vcf_1 %>%
+  separate(FORMAT, into = "genotype", sep = ":", extra = "drop") 
+
+# zmiana 0/0 na hom_ref etc. 
+vcf_1 <- vcf_1 %>%
+  separate(FORMAT, into = "genotype", sep = ":", extra = "drop") %>%
+  mutate(genotype = ifelse(genotype == "0/1", "HET", 
+                           ifelse(genotype == "1/1", "HOM_ALT", 
+                                  ifelse(genotype == "0/0", "HOM_REF", "error"))))
+
+# policz heterozygoty i homozygoty:
+table(vcf_1$genotype)
+
+# policz ponownie:
+vcf_1 %>%
+  group_by(genotype) %>%
+  tally()
+
+n_HET <- vcf_1 %>%
+  group_by(genotype) %>%
+  tally() %>%
+  filter(genotype == "HET") %>%
+  pull()
+
+n_HOM <- vcf_1 %>%
+  group_by(genotype) %>%
+  tally() %>%
+  filter(genotype == "HOM") %>%
+  pull()
+
+paste0("W danych zidentyfikowano ", n_HET, " heterozygot i ", n_HOM, " homozygot.")
+```
+Wizualizacja wzdłuż scaffoldu
+
+```{r wizualizacja}
+ggplot(vcf_1, aes(pos, chCADD)) +
+  geom_point() +
+  ggtitle("chCADD, scaffold X, individual Y", 
+          subtitle = paste0(n_variants, " variants"))
+
+# zwizualizuj chCADD wzdłuż scaffoldu z podziałem na genotyp.
+```
+
+Czy homozygoty i heterozygoty różnią się chCADD?
+
+```{r chCADD ~ genotyp}
+# Wykonamy to testem- najpierw warto sprawdzić rozkład w grupach:
+vcf_1 %>%
+    ggplot(aes(chCADD)) +
+  geom_histogram() + 
+  facet_grid(row = "genotype")
+
+# brak rozkładu normalnego --> transformacja danych
+  # logartym (dodaj 1 żeby uniknąć log(0)) --> źle
+vcf_1 %>%
+    ggplot(aes(log(chCADD) + 1)) +
+  geom_histogram() + 
+  facet_grid(row = "genotype")
+  # pierwiastek --> wygląda OK
+vcf_1 %>%
+    ggplot(aes(sqrt(chCADD))) +
+  geom_histogram() + 
+  facet_grid(row = "genotype")
+
+  # sprawdź po rozkład po pierwiastkowaniu testem Shapiro-Wilka (sprawdza rozkład normalny)
+x <- vcf_1 %>%
+  filter(genotype == "HET") %>%
+  mutate(chCADD_sqrt = sqrt(chCADD))
+
+shapiro.test(x$chCADD_sqrt) 
+
+# przystępujemy do testu nieparametrycznego: U-Manna-Whitneya
+```
+
+
+Testy permutacyjne: nieparametryczny test sprawdzający różnice między grupami, np. A i B. (spójrz na wykres https://en.wikipedia.org/wiki/File:Permutation_test_example_animation.gif). W teście permutacyjnym losowo zmieniamy przypisanie wartości do grupy, np. 1000 razy, i za każdym razem obliczamy średnią różnicę między wartościami A i B. Jeśli w tych losowych powtórzeniach tylko 2 razy  różnica była większa niż w rzeczywistych danych, wtedy P = 0.0002 (2/1000). Test permutacyjny wymaga spełnienia niewielu założeń, np.  nie trzeba się troszczyć o rozkład w grupach. 
+
+Mając zestaw danych, w których w pierwszej kolumnie mamy wartość, a w drugiej przynależność do grupy, np.:
+
+```{r}
+# utworzenie losowego zestawu danych
+df <- data.frame(wartość = c(rgamma(100, shape = 2, scale = 2),
+                          rgamma(100, shape = 2, scale = 3.9)),
+                grupa = c(rep("A", 500), 
+                          rep("B", 500)))
+
+print(df[c(1:5, 500:505),])
+
+```
+
+Obliczamy średnią wartość dla grupy A i B i odejmujemy A - B. 
+```{r}
+obs_diff <- mean(df$wartość[df$grupa == "A"]) - mean(df$wartość[df$grupa == "B"])
+
+paste0("Różnica średniej wartości wynosi ", round(obs_diff, 3))
+```
+
+```{r}
+# 1000 powtórzeń
+perm_diffs <- vector("numeric", 1000)
+
+for(i in 1:1000) {
+  # Losowo zmieniaj przyporządkowanie wartości do grupy:
+  perm_groups <- sample(df$grupa)
+  
+  # Oblicz różnice średniej wartości pomiędzy grupami A i B dla każdego powtórzenia:
+  perm_diffs[i] <- mean(df$wartość[perm_groups == "A"]) - mean(df$wartość[perm_groups == "B"])
+}
+
+p_value <- sum(perm_diffs <= obs_diff) / length(perm_diffs)
+
+print(p_value)
+
+# wizualizacja:
+perm_diffs_df <- data.frame(perm_diffs = perm_diffs)
+
+ggplot(perm_diffs_df, aes(perm_diffs)) +
+  geom_histogram() +
+  geom_vline(xintercept = obs_diff, linetype = "dashed")
+
+
+```
+Na powyższym histogramie pokazane są różnice pomiędzy grupami A i B, jeśli losowo przydzielimy grupy do wierszy. P = 0.006, co oznacza, że tylko w 6 permutacjach różnica między średnimi jest mniejsza niż w rzeczywistości. 
