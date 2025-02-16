@@ -4,12 +4,12 @@
   # 2) mapping quality
   # 3) depth of coverage
 # 
-# stats <- read.table("C:/Users/mikcha1/Downloads/Stats_QualMQDP_ruf_09.txt",
-#                     col.names = c("QUAL", "MQ", "DP")) # nadaj nazwy kolumnom
+stats <- read.table("C:/Users/mikcha1/Downloads/Stats_QualMQDP_ruf_09.txt",
+                    col.names = c("QUAL", "MQ", "DP")) # nadaj nazwy kolumnom
 
 # dla C_pyg_26:
-stats <- read.table("C:/Users/mikcha1/Downloads/Stats_QualMQDP.txt",
-col.names = c("QUAL", "MQ", "DP"))
+# stats <- read.table("C:/Users/mikcha1/Downloads/GEiP/Stats_QualMQDP.txt",
+# col.names = c("QUAL", "MQ", "DP"))
 
 # wersja podstawowa: base R graphics:
 hist(stats$QUAL, breaks = 30)
@@ -57,17 +57,17 @@ ggplot(stats_longer,
              nrow = 3, 
              scales = "free") +
   theme_bw() + # zmiana parametrów graficznych
-  ggtitle("BCF file, individual A")
+  ggtitle("BCF file, C_ruf_09") # dodanie tytułu
 
 # zapisz wykres jako my_plot
-my_plot < ggplot(stats_longer,
+my_plot <- ggplot(stats_longer,
                  aes(wartość)) + 
   geom_histogram() + 
   facet_wrap(~zmienna, 
              nrow = 3, 
              scales = "free_x") +
   theme_bw() + # zmiana parametrów graficznych
-  ggtitle("BCF file, individual A")
+  ggtitle("BCF file, C_pyg_26")
 
 stats_longer %>%
   dplyr::filter(zmienna == "DP", wartość < 30) %>%
@@ -81,7 +81,7 @@ ggplot(
   theme_bw() + # zmiana parametrów graficznych
   ggtitle("BCF file, individual A")
 
-ggsave("Stats_QualMQDP_INDV_NAME_ruf_12.png", 
+ggsave("Stats_QualMQDP_C_ruf_09.png", 
        width = 5, # szerokość (domyślnie w calach, możesz zmienić na cm dodając opcję units = "cm")
        height = 4) # wysokość
 

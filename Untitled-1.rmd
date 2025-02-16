@@ -1,0 +1,169 @@
+---
+title: "GEiP"
+author: "Sebastian Chmielewski"
+date: "2025-01-22"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+Na ostatnich zajęciach wprowadzimy *RMarkdown*. Jest to format, który umożliwia szybkie tworzenie raportu i przeplatanie fragmentów kodu z notatkami. 
+
+Fragmenty kodu (chunks) zaczynają się od nagłówka (```{r <nazwa fragmentu}) oraz kończą ```, np.:
+
+```{r setup, include=FALSE}
+# , include=FALSE oznacza, że ten fragment kodu nie zostanie wygenerowany w raporcie
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+```
+
+Żeby wygenerować raport, kliknij przycisk **Knit** na górze ekranu. 
+
+## Wczytaj plik VCF z chCADD scores dla C_pyg_26
+
+```{r wczytaj plik VCF z chCADD scores C_pyg_26}
+vcf_pyg <- read.table("vcf_C_pyg_26_reverse_indelRm_intersect_annotated_SNP_is_alt.bed")[,c(1,3,6,20)]
+
+colnames(vcf_pyg) <- c("chr", "pos", "chCADD", "FORMAT")
+
+# Wyciągnij informacje o homozygotach/heterozygotach
+vcf_pyg <- vcf_pyg %>%
+  separate(FORMAT, into = "genotype", sep = ":", extra = "drop") %>%
+  mutate(genotype = ifelse(genotype == "0/1", "HET", 
+                           ifelse(genotype == "1/1", "HOM_ALT", 
+                                  ifelse(genotype == "0/0", "HOM_REF", "error"))))
+
+# Oblicz średnie wartości chCADD
+mean_CADD_pyg <- mean(vcf_pyg$chCADD, na.rm = TRUE)
+mean_CADD_HOM_pyg <- mean(vcf_pyg$chCADD[vcf_pyg$genotype == "HOM_ALT"], na.rm = TRUE)
+mean_CADD_HET_pyg <- mean(vcf_pyg$chCADD[vcf_pyg$genotype == "HET"], na.rm = TRUE)
+
+mean_CADD_pyg
+mean_CADD_HOM_pyg
+mean_CADD_HET_pyg
+```
+
+## Wczytaj plik VCF z chCADD scores dla C_ruf_09
+
+```{r wczytaj plik VCF z chCADD scores C_ruf_09}
+vcf_ruf <- read.table("vcf_C_ruf_09_reverse_indelRm_intersect_annotated_SNP_is_alt.bed")[,c(1,3,6,20)]
+
+colnames(vcf_ruf) <- c("chr", "pos", "chCADD", "FORMAT")
+
+# Wyciągnij informacje o homozygotach/heterozygotach
+vcf_ruf <- vcf_ruf %>%
+  separate(FORMAT, into = "genotype", sep = ":", extra = "drop") %>%
+  mutate(genotype = ifelse(genotype == "0/1", "HET", 
+                           ifelse(genotype == "1/1", "HOM_ALT", 
+                                  ifelse(genotype == "0/0", "HOM_REF", "error"))))
+
+# Oblicz średnie wartości chCADD
+mean_CADD_ruf <- mean(vcf_ruf$chCADD, na.rm = TRUE)
+mean_CADD_HOM_ruf <- mean(vcf_ruf$chCADD[vcf_ruf$genotype == "HOM_ALT"], na.rm = TRUE)
+mean_CADD_HET_ruf <- mean(vcf_ruf$chCADD[vcf_ruf$genotype == "HET"], na.rm = TRUE)
+
+mean_CADD_ruf
+mean_CADD_HOM_ruf
+mean_CADD_HET_ruf
+```
+
+## Wyniki
+
+```{r wyniki}
+results <- data.frame(
+  Individual = c("C_pyg_26", "C_ruf_09"),
+  Mean_CADD = c(mean_CADD_pyg, mean_CADD_ruf),
+  Mean_CADD_HOM = c(mean_CADD_HOM_pyg, mean_CADD_HOM_ruf),
+  Mean_CADD_HET = c(mean_CADD_HET_pyg, mean_CADD_HET_ruf)
+)
+
+print(results)
+```
+
+This code will read the VCF files for both individuals, process the data to extract genotype information, and calculate the mean CADD scores for all variants, homozygous variants, and heterozygous variants. The results will be displayed in a data frame.---
+title: "GEiP"
+author: "Sebastian Chmielewski"
+date: "2025-01-22"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+Na ostatnich zajęciach wprowadzimy *RMarkdown*. Jest to format, który umożliwia szybkie tworzenie raportu i przeplatanie fragmentów kodu z notatkami. 
+
+Fragmenty kodu (chunks) zaczynają się od nagłówka (```{r <nazwa fragmentu}) oraz kończą ```, np.:
+
+```{r setup, include=FALSE}
+# , include=FALSE oznacza, że ten fragment kodu nie zostanie wygenerowany w raporcie
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+```
+
+Żeby wygenerować raport, kliknij przycisk **Knit** na górze ekranu. 
+
+## Wczytaj plik VCF z chCADD scores dla C_pyg_26
+
+```{r wczytaj plik VCF z chCADD scores C_pyg_26}
+vcf_pyg <- read.table("vcf_C_pyg_26_reverse_indelRm_intersect_annotated_SNP_is_alt.bed")[,c(1,3,6,20)]
+
+colnames(vcf_pyg) <- c("chr", "pos", "chCADD", "FORMAT")
+
+# Wyciągnij informacje o homozygotach/heterozygotach
+vcf_pyg <- vcf_pyg %>%
+  separate(FORMAT, into = "genotype", sep = ":", extra = "drop") %>%
+  mutate(genotype = ifelse(genotype == "0/1", "HET", 
+                           ifelse(genotype == "1/1", "HOM_ALT", 
+                                  ifelse(genotype == "0/0", "HOM_REF", "error"))))
+
+# Oblicz średnie wartości chCADD
+mean_CADD_pyg <- mean(vcf_pyg$chCADD, na.rm = TRUE)
+mean_CADD_HOM_pyg <- mean(vcf_pyg$chCADD[vcf_pyg$genotype == "HOM_ALT"], na.rm = TRUE)
+mean_CADD_HET_pyg <- mean(vcf_pyg$chCADD[vcf_pyg$genotype == "HET"], na.rm = TRUE)
+
+mean_CADD_pyg
+mean_CADD_HOM_pyg
+mean_CADD_HET_pyg
+```
+
+## Wczytaj plik VCF z chCADD scores dla C_ruf_09
+
+```{r wczytaj plik VCF z chCADD scores C_ruf_09}
+vcf_ruf <- read.table("vcf_C_ruf_09_reverse_indelRm_intersect_annotated_SNP_is_alt.bed")[,c(1,3,6,20)]
+
+colnames(vcf_ruf) <- c("chr", "pos", "chCADD", "FORMAT")
+
+# Wyciągnij informacje o homozygotach/heterozygotach
+vcf_ruf <- vcf_ruf %>%
+  separate(FORMAT, into = "genotype", sep = ":", extra = "drop") %>%
+  mutate(genotype = ifelse(genotype == "0/1", "HET", 
+                           ifelse(genotype == "1/1", "HOM_ALT", 
+                                  ifelse(genotype == "0/0", "HOM_REF", "error"))))
+
+# Oblicz średnie wartości chCADD
+mean_CADD_ruf <- mean(vcf_ruf$chCADD, na.rm = TRUE)
+mean_CADD_HOM_ruf <- mean(vcf_ruf$chCADD[vcf_ruf$genotype == "HOM_ALT"], na.rm = TRUE)
+mean_CADD_HET_ruf <- mean(vcf_ruf$chCADD[vcf_ruf$genotype == "HET"], na.rm = TRUE)
+
+mean_CADD_ruf
+mean_CADD_HOM_ruf
+mean_CADD_HET_ruf
+```
+
+## Wyniki
+
+```{r wyniki}
+results <- data.frame(
+  Individual = c("C_pyg_26", "C_ruf_09"),
+  Mean_CADD = c(mean_CADD_pyg, mean_CADD_ruf),
+  Mean_CADD_HOM = c(mean_CADD_HOM_pyg, mean_CADD_HOM_ruf),
+  Mean_CADD_HET = c(mean_CADD_HET_pyg, mean_CADD_HET_ruf)
+)
+
+print(results)
+```
+
+This code will read the VCF files for both individuals, process the data to extract genotype information, and calculate the mean CADD scores for all variants, homozygous variants, and heterozygous variants. The results will be displayed in a data frame.

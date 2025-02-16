@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.2.14)  14 FEB 2025 19:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.2.14)  16 FEB 2025 12:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/mikcha1/Downloads/GEiP/protok√≥≈Ç.tex
-(c:/Users/mikcha1/Downloads/GEiP/protok√≥≈Ç.tex
+**c:/Users/mikcha1/Downloads/GEiP/raport.tex
+(c:/Users/mikcha1/Downloads/GEiP/raport.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
 (C:\Users\mikcha1\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -183,72 +183,88 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
 \Hy@SectionHShift=\skip50
-) (C:\Users\mikcha1\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+) (C:\Users\mikcha1\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip51
+\multirow@cntb=\count276
+\multirow@dima=\skip52
+\bigstrutjot=\dimen148
+) (C:\Users\mikcha1\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen149
+\ar@mcellbox=\box53
+\extrarowheight=\dimen150
+\NC@list=\toks22
+\extratabsurround=\skip53
+\backup@length=\skip54
+\ar@cellbox=\box54
+) (C:\Users\mikcha1\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.sty
+Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
+ (C:\Users\mikcha1\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bkm-pdftex.def
+File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
+\BKM@id=\count277
+)) (C:\Users\mikcha1\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (C:\Users\mikcha1\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count276
-\Gm@cntv=\count277
-\c@Gm@tempcnt=\count278
-\Gm@bindingoffset=\dimen148
-\Gm@wd@mp=\dimen149
-\Gm@odd@mp=\dimen150
-\Gm@even@mp=\dimen151
-\Gm@layoutwidth=\dimen152
-\Gm@layoutheight=\dimen153
-\Gm@layouthoffset=\dimen154
-\Gm@layoutvoffset=\dimen155
-\Gm@dimlist=\toks22
+\Gm@cnth=\count278
+\Gm@cntv=\count279
+\c@Gm@tempcnt=\count280
+\Gm@bindingoffset=\dimen151
+\Gm@wd@mp=\dimen152
+\Gm@odd@mp=\dimen153
+\Gm@even@mp=\dimen154
+\Gm@layoutwidth=\dimen155
+\Gm@layoutheight=\dimen156
+\Gm@layouthoffset=\dimen157
+\Gm@layoutvoffset=\dimen158
+\Gm@dimlist=\toks23
  (C:\Users\mikcha1\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\mikcha1\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count279
-\l__pdf_internal_box=\box53
-)
-No file protok√≥≈Ç.aux.
-\openout1 = `protok√≥≈Ç.aux'.
+\l__color_backend_stack_int=\count281
+\l__pdf_internal_box=\box55
+) (raport.aux)
+\openout1 = `raport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-(C:\Users\mikcha1\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+ (C:\Users\mikcha1\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count280
-\scratchdimen=\dimen156
-\scratchbox=\box54
-\nofMPsegments=\count281
-\nofMParguments=\count282
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count283
-\MPscratchDim=\dimen157
-\MPnumerator=\count284
-\makeMPintoPDFobject=\count285
-\everyMPtoPDFconversion=\toks24
+\scratchcounter=\count282
+\scratchdimen=\dimen159
+\scratchbox=\box56
+\nofMPsegments=\count283
+\nofMParguments=\count284
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count285
+\MPscratchDim=\dimen160
+\MPnumerator=\count286
+\makeMPintoPDFobject=\count287
+\everyMPtoPDFconversion=\toks25
 ) (C:\Users\mikcha1\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (C:\Users\mikcha1\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 15.
-\@outlinefile=\write3
-\openout3 = `protok√≥≈Ç.out'.
-
+Package hyperref Info: Link coloring OFF on input line 18.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -285,38 +301,143 @@ Package hyperref Info: Link coloring OFF on input line 15.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 18.
+(Font)              <14.4> on input line 21.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 18.
+(Font)              <7> on input line 21.
+<img/workflow1.png, id=5, 586.19pt x 320.69812pt>
+File: img/workflow1.png Graphic file (type png)
+<use img/workflow1.png>
+Package pdftex.def Info: img/workflow1.png  used on input line 30.
+(pdftex.def)             Requested size: 483.69687pt x 264.62325pt.
 [1
 
-{C:/Users/mikcha1/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] (protok√≥≈Ç.aux)
+{C:/Users/mikcha1/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./img/workflow1.png>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 45.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 45.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 45.
+
+Underfull \hbox (badness 1661) in paragraph at lines 50--50
+\T1/cmr/m/n/12 niki... ale naj-pew-niej to
+ []
+
+
+Underfull \hbox (badness 1142) in paragraph at lines 51--52
+[]|\T1/cmr/m/n/12 Sta™a d™u-go±¢ od-czy-tÛw -
+ []
+
+
+Underfull \hbox (badness 4193) in paragraph at lines 58--58
+[]|\T1/cmr/m/n/12 Generalnie do-bre wy-niki.
+ []
+
+
+Underfull \hbox (badness 1043) in paragraph at lines 58--58
+\T1/cmr/m/n/12 to-wane se-kwen-cje s° spo-
+ []
+
+
+Underfull \hbox (badness 2368) in paragraph at lines 58--58
+\T1/cmr/m/n/12 za-wiera GC na po-zio-mie
+ []
+
+
+Underfull \hbox (badness 1881) in paragraph at lines 59--60
+\T1/cmr/m/n/12 miar nad-re-pre-zen-to-wa-nych
+ []
+
+
+Underfull \hbox (badness 2368) in paragraph at lines 59--60
+\T1/cmr/m/n/12 za-wiera GC na po-zio-mie
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--62
+[]|\T1/cmr/m/n/12 Usuni¶to nad-re-pre-zen-ta-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--62
+\T1/cmr/m/n/12 tywne se-kwen-cje. Liczba
+ []
+
+
+Underfull \hbox (badness 1314) in paragraph at lines 63--64
+\T1/cmr/m/n/12 za-war-to-±ci° GC. Usu-ni¶to
+ []
+
+<img/workflow2.png, id=23, 1088.065pt x 833.1125pt>
+File: img/workflow2.png Graphic file (type png)
+<use img/workflow2.png>
+Package pdftex.def Info: img/workflow2.png  used on input line 72.
+(pdftex.def)             Requested size: 483.69687pt x 370.35889pt.
+[2] [3 <./img/workflow2.png>]
+<img/Stats_QualMQDP_C_pyg_26.png, id=46, 361.35pt x 289.08pt>
+File: img/Stats_QualMQDP_C_pyg_26.png Graphic file (type png)
+<use img/Stats_QualMQDP_C_pyg_26.png>
+Package pdftex.def Info: img/Stats_QualMQDP_C_pyg_26.png  used on input line 90.
+(pdftex.def)             Requested size: 237.01411pt x 189.61124pt.
+<img/Stats_QualMQDP_C_ruf_09.png, id=47, 361.35pt x 289.08pt>
+File: img/Stats_QualMQDP_C_ruf_09.png Graphic file (type png)
+<use img/Stats_QualMQDP_C_ruf_09.png>
+Package pdftex.def Info: img/Stats_QualMQDP_C_ruf_09.png  used on input line 97.
+(pdftex.def)             Requested size: 237.01411pt x 189.61124pt.
+<img/workflow4.png, id=48, 395.514pt x 699.705pt>
+File: img/workflow4.png Graphic file (type png)
+<use img/workflow4.png>
+Package pdftex.def Info: img/workflow4.png  used on input line 106.
+(pdftex.def)             Requested size: 386.95897pt x 684.58519pt.
+ [4 <./img/Stats_QualMQDP_C_pyg_26.png> <./img/Stats_QualMQDP_C_ruf_09.png>] [5 <./img/workflow4.png>]
+<img/before_chaining.png, id=64, 312.16624pt x 313.17pt>
+File: img/before_chaining.png Graphic file (type png)
+<use img/before_chaining.png>
+Package pdftex.def Info: img/before_chaining.png  used on input line 119.
+(pdftex.def)             Requested size: 237.01411pt x 237.78229pt.
+<img/after_chaining.png, id=65, 312.16624pt x 313.17pt>
+File: img/after_chaining.png Graphic file (type png)
+<use img/after_chaining.png>
+Package pdftex.def Info: img/after_chaining.png  used on input line 126.
+(pdftex.def)             Requested size: 237.01411pt x 237.78229pt.
+<img/maybe_erronously_filtered.png, id=67, 465.74pt x 29.10875pt>
+File: img/maybe_erronously_filtered.png Graphic file (type png)
+<use img/maybe_erronously_filtered.png>
+Package pdftex.def Info: img/maybe_erronously_filtered.png  used on input line 135.
+(pdftex.def)             Requested size: 386.95897pt x 24.18556pt.
+ [6 <./img/before_chaining.png (PNG copy)> <./img/after_chaining.png (PNG copy)> <./img/maybe_erronously_filtered.png>]
+Overfull \hbox (29.74898pt too wide) in paragraph at lines 154--163
+ [][] 
+ []
+
+<img/chCADD_C_pyg_26.png, id=84, 689.57625pt x 566.115pt>
+File: img/chCADD_C_pyg_26.png Graphic file (type png)
+<use img/chCADD_C_pyg_26.png>
+Package pdftex.def Info: img/chCADD_C_pyg_26.png  used on input line 172.
+(pdftex.def)             Requested size: 386.95897pt x 317.67874pt.
+<img/chCADD_C_ruf_09.png, id=85, 689.57625pt x 506.89375pt>
+File: img/chCADD_C_ruf_09.png Graphic file (type png)
+<use img/chCADD_C_ruf_09.png>
+Package pdftex.def Info: img/chCADD_C_ruf_09.png  used on input line 179.
+(pdftex.def)             Requested size: 386.95897pt x 284.4464pt.
+[7 <./img/chCADD_C_pyg_26.png>] (raport.bbl) [8 <./img/chCADD_C_ruf_09.png>] (raport.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
-
-
-Package rerunfilecheck Warning: File `protok√≥≈Ç.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `protok√≥≈Ç.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  C413A880B4DF34F0368467BB126FD560;1048.
  ) 
 Here is how much of TeX's memory you used:
- 10233 strings out of 474486
- 163263 string characters out of 5742811
- 1934542 words of memory out of 5000000
- 32407 multiletter control sequences out of 15000+600000
- 564680 words of font info for 47 fonts, out of 8000000 for 9000
+ 10802 strings out of 474486
+ 173368 string characters out of 5742811
+ 1937542 words of memory out of 5000000
+ 32921 multiletter control sequences out of 15000+600000
+ 567802 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,6n,79p,448b,450s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\mikcha1\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\mikcha1\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\mikcha1\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\mikcha1\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\mikcha1\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\mikcha1\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk>
-Output written on protok√≥≈Ç.pdf (2 pages, 77042 bytes).
+ 75i,10n,79p,1236b,449s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\mikcha1\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\mikcha1\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\mikcha1\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\mikcha1\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\mikcha1\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\mikcha1\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\mikcha1\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk>
+Output written on raport.pdf (8 pages, 601234 bytes).
 PDF statistics:
- 236 PDF objects out of 1000 (max. 8388607)
- 11 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 464 PDF objects out of 1000 (max. 8388607)
+ 41 named destinations out of 1000 (max. 500000)
+ 187 words of extra memory for PDF output out of 10000 (max. 10000000)
 
